@@ -105,6 +105,11 @@
   font-size: var(--text-lg);
 }
 
+/* El título va dentro de la columna izquierda para que el cuadro lateral quede a su altura */
+.about__text .section__header {
+  margin-bottom: var(--space-xl);
+}
+
 .about__aside {
   padding: var(--space-lg);
   border-radius: var(--radius-md);

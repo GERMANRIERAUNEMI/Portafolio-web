@@ -32,7 +32,7 @@
   --text-xl: 1.5625rem;
   --text-2xl: 1.953rem;
   --text-3xl: clamp(2.2rem, 4vw + 1rem, 3.3rem);
-  --text-hero: clamp(2.8rem, 8vw + 0.5rem, 6rem);
+  --text-hero: clamp(2.4rem, 5vw + 0.75rem, 4.25rem);
 
   --weight-regular: 400;
   --weight-semibold: 600;

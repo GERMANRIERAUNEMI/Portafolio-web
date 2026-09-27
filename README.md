@@ -2,8 +2,8 @@
 
 Portafolio personal de **Germán Riera**, desarrollador web. Presenta mi perfil, mis habilidades técnicas y mis proyectos destacados, junto con un Design System que documenta los componentes del sitio.
 
-- **Sitio publicado:** https://germanrieraunemi.github.io/portafolio/
-- **Repositorio:** https://github.com/GERMANRIERAUNEMI/portafolio
+- **Sitio publicado:** https://germanrieraunemi.github.io/Portafolio-web/
+- **Repositorio:** https://github.com/GERMANRIERAUNEMI/Portafolio-web
 
 ![Captura del portafolio en escritorio](docs/captura-escritorio.webp)
 
@@ -57,7 +57,7 @@ portafolio/
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/GERMANRIERAUNEMI/portafolio.git
+   git clone https://github.com/GERMANRIERAUNEMI/Portafolio-web.git
    ```
 2. Abre `index.html` en el navegador (doble clic), o usa la extensión **Live Server** de VS Code.
 
