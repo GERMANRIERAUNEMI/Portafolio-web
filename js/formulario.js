@@ -101,11 +101,40 @@
       estado.textContent = "¡Gracias! Tu mensaje fue enviado. Te responderé pronto.";
       estado.className = "form-status form-status--success";
       formulario.reset();
-    } catch {
-      estado.textContent = `No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a ${destino}.`;
+    } catch (error) {
+      estado.textContent = explicarError(error, destino);
       estado.className = "form-status form-status--error";
     } finally {
       boton.disabled = false;
     }
   });
+
+  /** Traduce los fallos más comunes de FormSubmit a un mensaje claro. */
+  function explicarError(error, destino) {
+    const detalle = String(error && error.message).toLowerCase();
+    if (detalle.includes("activat")) {
+      return `El formulario todavía no está activado. Revisa la bandeja de ${destino} (y spam) y pulsa "Activate Form".`;
+    }
+    if (location.protocol === "file:" || detalle.includes("web server")) {
+      return "El envío solo funciona con la página publicada (GitHub Pages) o con Live Server, no abriendo el archivo con doble clic.";
+    }
+    return `No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a ${destino}.`;
+  }
+
+  // Copiar el correo de "Otras formas de contacto" sin abrir otra pestaña
+  const copiar = document.querySelector("[data-copy-email]");
+  const avisoCopia = document.querySelector("[data-copy-status]");
+  if (copiar) {
+    copiar.addEventListener("click", async () => {
+      const correo = copiar.dataset.copyEmail;
+      try {
+        await navigator.clipboard.writeText(correo);
+        avisoCopia.textContent = "¡Correo copiado! Pégalo en tu programa de correo.";
+      } catch {
+        avisoCopia.textContent = `Copia este correo: ${correo}`;
+      }
+      clearTimeout(copiar.temporizador);
+      copiar.temporizador = setTimeout(() => { avisoCopia.textContent = ""; }, 4000);
+    });
+  }
 })();

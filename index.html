@@ -66,7 +66,7 @@
           <p class="hero__greeting">Hola, soy</p>
           <!-- EDITAR: tu nombre completo -->
           <h1 class="hero__name" id="titulo-inicio" data-reveal-name>Germán Riera</h1>
-          <p class="hero__role">Desarrollador web · Python y Django</p>
+          <p class="hero__role">Desarrollador web</p>
           <p class="hero__intro">
             Construyo aplicaciones web que resuelven problemas concretos: un juego multijugador
             en tiempo real y un sistema para registrar consultas médicas son mis proyectos más recientes.
@@ -432,11 +432,12 @@
             <p class="text-muted">También puedes revisar mi código directamente en GitHub.</p>
             <ul class="contact__links">
               <li>
-                <!-- Correo profesional -->
-                <a href="mailto:grierar@unemi.edu.ec">
+                <!-- Correo profesional: al hacer clic se copia, sin abrir otra pestaña -->
+                <button class="contact__copy" type="button" data-copy-email="grierar@unemi.edu.ec">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
                   grierar@unemi.edu.ec
-                </a>
+                </button>
+                <span class="contact__copy-status" role="status" data-copy-status></span>
               </li>
               <li>
                 <a href="https://github.com/GERMANRIERAUNEMI" target="_blank" rel="noopener">

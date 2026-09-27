@@ -8,7 +8,7 @@
 }
 
 .section--alt {
-  background: var(--color-surface);
+  background: color-mix(in srgb, var(--color-surface) var(--section-alt-opacity), transparent);
   border-block: var(--border);
 }
 
@@ -241,6 +241,37 @@
   align-items: center;
   gap: var(--space-sm);
   font-weight: var(--weight-semibold);
+}
+
+/* El correo es un botón (copia la dirección) pero se ve igual que los enlaces */
+.contact__copy {
+  overflow-wrap: anywhere;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-width-strong);
+  text-underline-offset: 0.2em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.contact__copy:hover {
+  color: var(--color-primary-hover);
+}
+
+.contact__copy-status {
+  display: block;
+  min-height: 1.25em;
+  margin-top: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--color-success);
 }
 
 .contact__links svg {
