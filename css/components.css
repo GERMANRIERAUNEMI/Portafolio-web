@@ -1,11 +1,3 @@
-/* ==========================================================================
-   components.css — Componentes reutilizables
-   Cada componente se documenta en design-system.html.
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   Navbar
-   -------------------------------------------------------------------------- */
 .navbar {
   position: sticky;
   top: 0;
@@ -69,7 +61,6 @@
   background: var(--color-surface-alt);
 }
 
-/* Sección o página actual (lo marca js/navegacion.js) */
 .navbar__link[aria-current="true"],
 .navbar__link[aria-current="page"] {
   color: var(--color-primary);
@@ -77,10 +68,9 @@
 }
 
 .navbar .navbar__toggle {
-  display: none;  /* solo aparece en pantallas pequeñas */
+  display: none;
 }
 
-/* Menú móvil: debajo de 52rem los enlaces se abren con el botón */
 @media (max-width: 52rem) {
   .navbar .navbar__toggle {
     display: inline-grid;
@@ -109,9 +99,6 @@
   }
 }
 
-/* --------------------------------------------------------------------------
-   Botones
-   -------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -162,7 +149,6 @@
   font-size: var(--text-sm);
 }
 
-/* Botón cuadrado solo con ícono (tema, menú, volver arriba) */
 .btn-icon {
   display: inline-grid;
   place-items: center;
@@ -187,14 +173,10 @@
   height: 1.25rem;
 }
 
-/* El ícono de sol/luna cambia según el tema */
 .theme-toggle .icon-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
-/* --------------------------------------------------------------------------
-   Badge (tecnologías)
-   -------------------------------------------------------------------------- */
 .badge-list {
   display: flex;
   flex-wrap: wrap;
@@ -220,9 +202,6 @@
   color: var(--color-text);
 }
 
-/* --------------------------------------------------------------------------
-   Skill: nombre, nivel (3 segmentos) y descripción
-   -------------------------------------------------------------------------- */
 .skill {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -272,7 +251,6 @@
   color: var(--color-text-muted);
 }
 
-/* Nivel: 3 segmentos. data-level = 1 (básico), 2 (intermedio), 3 (avanzado) */
 .level {
   display: inline-flex;
   align-items: center;
@@ -299,9 +277,6 @@
   background: var(--color-primary);
 }
 
-/* --------------------------------------------------------------------------
-   Card de proyecto
-   -------------------------------------------------------------------------- */
 .card {
   display: flex;
   flex-direction: column;
@@ -366,14 +341,10 @@
   padding-top: var(--space-sm);
 }
 
-/* Estado oculto por el filtro de proyectos */
 .card[hidden] {
   display: none;
 }
 
-/* --------------------------------------------------------------------------
-   Filtros (chips)
-   -------------------------------------------------------------------------- */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -405,9 +376,6 @@
   color: var(--color-on-primary);
 }
 
-/* --------------------------------------------------------------------------
-   Campos de formulario
-   -------------------------------------------------------------------------- */
 .field {
   display: flex;
   flex-direction: column;
@@ -470,9 +438,6 @@
 .form-status--success { color: var(--color-success); }
 .form-status--error { color: var(--color-error); }
 
-/* --------------------------------------------------------------------------
-   Modal (usa el elemento <dialog>)
-   -------------------------------------------------------------------------- */
 .modal {
   width: min(100% - 2 * var(--space-md), 44rem);
   max-height: calc(100vh - 2 * var(--space-xl));
@@ -534,9 +499,6 @@
   padding-left: var(--space-lg);
 }
 
-/* --------------------------------------------------------------------------
-   Botón volver arriba
-   -------------------------------------------------------------------------- */
 .back-to-top {
   position: fixed;
   right: var(--space-lg);
@@ -555,9 +517,6 @@
   transform: none;
 }
 
-/* --------------------------------------------------------------------------
-   Avatar
-   -------------------------------------------------------------------------- */
 .avatar {
   margin: 0;
   justify-self: center;

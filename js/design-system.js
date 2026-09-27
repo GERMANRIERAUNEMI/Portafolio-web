@@ -1,14 +1,8 @@
-/**
- * design-system.js
- * Lee el valor real de cada color desde las variables CSS y lo muestra en
- * su muestra. Se actualiza al cambiar entre tema claro y oscuro.
- */
 (function () {
   "use strict";
 
   const etiquetas = document.querySelectorAll("[data-token]");
 
-  /** Convierte "rgb(51, 70, 211)" en "#3346d3". Si ya es hex, lo deja igual. */
   function aHex(valor) {
     const partes = valor.match(/\d+(\.\d+)?/g);
     if (!valor.startsWith("rgb") || !partes) return valor;

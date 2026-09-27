@@ -1,7 +1,3 @@
-/* ==========================================================================
-   base.css — Reset, tipografía y utilidades generales
-   ========================================================================== */
-
 *,
 *::before,
 *::after {
@@ -38,7 +34,6 @@ svg {
   height: auto;
 }
 
-/* ---------- Encabezados ---------- */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: var(--weight-bold);
@@ -57,7 +52,6 @@ p {
   max-width: var(--reading-max);
 }
 
-/* ---------- Enlaces ---------- */
 a {
   color: var(--color-primary);
   text-decoration-thickness: var(--border-width-strong);
@@ -68,14 +62,12 @@ a:hover {
   color: var(--color-primary-hover);
 }
 
-/* ---------- Foco visible para navegar con teclado ---------- */
 :focus-visible {
   outline: 3px solid var(--color-secondary);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
 
-/* ---------- Utilidades ---------- */
 .container {
   width: min(100% - 2 * var(--space-lg), var(--container-max));
   margin-inline: auto;
@@ -89,7 +81,6 @@ a:hover {
   font-size: var(--text-sm);
 }
 
-/* Oculta visualmente pero lo mantiene para lectores de pantalla */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -102,7 +93,6 @@ a:hover {
   border: 0;
 }
 
-/* Enlace para saltar directo al contenido con el teclado */
 .skip-link {
   position: absolute;
   left: var(--space-md);

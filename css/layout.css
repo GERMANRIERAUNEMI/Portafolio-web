@@ -1,8 +1,3 @@
-/* ==========================================================================
-   layout.css — Distribución de cada sección de la página
-   ========================================================================== */
-
-/* ---------- Secciones ---------- */
 .section {
   padding-block: var(--space-3xl);
 }
@@ -21,7 +16,6 @@
   font-size: var(--text-lg);
 }
 
-/* ---------- Hero / Inicio ---------- */
 .hero {
   padding-block: var(--space-3xl) var(--space-2xl);
 }
@@ -39,7 +33,6 @@
   color: var(--color-text-muted);
 }
 
-/* El nombre aparece letra por letra sobre sus guiones, como en el ahorcado */
 .hero__name {
   font-size: var(--text-hero);
   line-height: 1;
@@ -93,7 +86,6 @@
   margin-top: var(--space-xl);
 }
 
-/* ---------- Sobre mí ---------- */
 .about__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
@@ -105,7 +97,6 @@
   font-size: var(--text-lg);
 }
 
-/* El título va dentro de la columna izquierda para que el cuadro lateral quede a su altura */
 .about__text .section__header {
   margin-bottom: var(--space-xl);
 }
@@ -125,7 +116,6 @@
   margin-top: var(--space-xl);
 }
 
-/* Línea de tiempo de formación (sí es una secuencia) */
 .timeline {
   list-style: none;
   margin: 0;
@@ -165,7 +155,6 @@
   font-weight: var(--weight-bold);
 }
 
-/* ---------- Habilidades ---------- */
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
@@ -199,7 +188,6 @@
   font-size: var(--text-sm);
 }
 
-/* ---------- Proyectos ---------- */
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
@@ -212,7 +200,6 @@
   color: var(--color-text-muted);
 }
 
-/* ---------- Contacto ---------- */
 .contact__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
@@ -236,14 +223,13 @@
 }
 
 .contact__links a {
-  overflow-wrap: anywhere;   /* los enlaces largos no se salen en teléfonos */
+  overflow-wrap: anywhere;
   display: flex;
   align-items: center;
   gap: var(--space-sm);
   font-weight: var(--weight-semibold);
 }
 
-/* El correo es un botón (copia la dirección) pero se ve igual que los enlaces */
 .contact__copy {
   overflow-wrap: anywhere;
   display: flex;
@@ -280,7 +266,6 @@
   flex-shrink: 0;
 }
 
-/* ---------- Footer ---------- */
 .footer {
   padding-block: var(--space-xl);
   border-top: var(--border);
@@ -299,11 +284,6 @@
   margin: 0;
 }
 
-/* ==========================================================================
-   Responsive
-   ========================================================================== */
-
-/* Tablets */
 @media (max-width: 60rem) {
   .about__grid,
   .contact__grid {
@@ -311,7 +291,6 @@
   }
 }
 
-/* Teléfonos */
 @media (max-width: 40rem) {
   .section {
     padding-block: var(--space-2xl);
@@ -326,7 +305,6 @@
     gap: var(--space-xl);
   }
 
-  /* En el teléfono la foto va primero */
   .hero__grid .avatar {
     order: -1;
     justify-self: start;

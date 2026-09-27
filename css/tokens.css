@@ -1,15 +1,8 @@
-/* ==========================================================================
-   tokens.css — Sistema visual del portafolio
-   Todas las decisiones de diseño viven aquí como CSS Custom Properties.
-   El resto de archivos CSS SOLO usa estas variables.
-   ========================================================================== */
-
 :root {
-  /* ---------- Colores: tema claro ("papel") ---------- */
-  --color-primary: #2d5b88;          /* azul acero: enlaces, botones, foco */
+  --color-primary: #2d5b88;
   --color-primary-hover: #22476c;
-  --color-primary-soft: #e3ecf5;     /* fondos suaves del color primario */
-  --color-secondary: #b7832a;        /* dorado: detalles y énfasis */
+  --color-primary-soft: #e3ecf5;
+  --color-secondary: #b7832a;
   --color-secondary-soft: #f6ecd9;
   --color-background: #f4f3ef;
   --color-surface: #ffffff;
@@ -17,23 +10,18 @@
   --color-text: #1c1f24;
   --color-text-muted: #5d636d;
   --color-border: #dcd9d1;
-  --color-on-primary: #ffffff;       /* texto sobre el color primario */
+  --color-on-primary: #ffffff;
   --color-success: #2f7a54;
   --color-error: #b83b30;
 
-  /* ---------- Fondo de la página ----------
-     Una luz suave desde arriba (como un fondo de estudio fotográfico)
-     y una textura de grano muy sutil para que no se vea plano. */
   --bg-glow:
     radial-gradient(ellipse 80% 55% at 50% -10%, rgb(45 91 136 / 0.10), transparent 70%);
   --bg-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  --section-alt-opacity: 70%;        /* las secciones alternas dejan ver la luz del fondo */
+  --section-alt-opacity: 70%;
 
-  /* ---------- Tipografía ---------- */
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
 
-  /* Escala tipográfica (razón 1.25) */
   --text-sm: 0.875rem;
   --text-base: 1.0625rem;
   --text-lg: 1.25rem;
@@ -48,38 +36,33 @@
   --leading-tight: 1.1;
   --leading-normal: 1.6;
 
-  /* ---------- Espaciado (escala base 4px) ---------- */
-  --space-2xs: 0.25rem;  /*  4px */
-  --space-xs: 0.5rem;    /*  8px */
-  --space-sm: 0.75rem;   /* 12px */
-  --space-md: 1rem;      /* 16px */
-  --space-lg: 1.5rem;    /* 24px */
-  --space-xl: 2rem;      /* 32px */
-  --space-2xl: 3rem;     /* 48px */
-  --space-3xl: 5rem;     /* 80px */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 5rem;
 
-  /* ---------- Bordes y radios ---------- */
   --border-width: 1px;
   --border-width-strong: 2px;
   --border: var(--border-width) solid var(--color-border);
-  --radius-sm: 0.5rem;   /* botones, inputs */
-  --radius-md: 1rem;     /* cards */
-  --radius-pill: 999px;  /* badges, filtros */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-pill: 999px;
 
-  /* ---------- Sombras ---------- */
   --shadow-sm: 0 1px 2px rgb(26 29 46 / 0.06);
   --shadow-card: 0 6px 20px rgb(26 29 46 / 0.08);
   --shadow-lift: 0 14px 34px rgb(26 29 46 / 0.14);
 
-  /* ---------- Tamaños ---------- */
   --container-max: 72rem;
-  --reading-max: 38rem;          /* ancho cómodo para leer párrafos */
+  --reading-max: 38rem;
   --header-height: 4.25rem;
   --avatar-size: clamp(11rem, 22vw, 17rem);
   --icon-size: 2.5rem;
-  --control-height: 2.75rem;     /* altura mínima táctil de botones e inputs */
+  --control-height: 2.75rem;
 
-  /* ---------- Movimiento ---------- */
   --duration-fast: 150ms;
   --duration-base: 250ms;
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -87,10 +70,7 @@
   color-scheme: light;
 }
 
-/* ---------- Colores: tema oscuro ----------
-   Se aplica al elegir "oscuro" con el botón (data-theme="dark"). */
 :root[data-theme="dark"] {
-  /* Tema "grafito": negro carbón con luz gris azulada, azul acero y dorado */
   --color-primary: #8cb8e6;
   --color-primary-hover: #b3d1f0;
   --color-primary-soft: #1b2838;
@@ -120,7 +100,6 @@
   color-scheme: dark;
 }
 
-/* Quien pide menos movimiento en su sistema no ve animaciones */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --duration-fast: 0ms;

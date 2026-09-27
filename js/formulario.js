@@ -1,8 +1,3 @@
-/**
- * formulario.js — Funcionalidad 7: validación del formulario de contacto.
- * Muestra mensajes claros junto a cada campo. Como GitHub Pages no tiene
- * servidor, el mensaje se envía al correo de data-email mediante FormSubmit.
- */
 (function () {
   "use strict";
 
@@ -12,7 +7,6 @@
   const estado = formulario.querySelector("[data-form-status]");
   const campos = formulario.querySelectorAll(".input, .textarea");
 
-  /** Devuelve el mensaje de error de un campo, o "" si es válido. */
   function mensajeDeError(campo) {
     const valor = campo.value.trim();
     const etiqueta = formulario.querySelector(`label[for="${campo.id}"]`).textContent.toLowerCase();
@@ -30,7 +24,6 @@
     return "";
   }
 
-  // Contador de caracteres del mensaje
   const mensaje = formulario.querySelector("#mensaje");
   const contador = formulario.querySelector("[data-char-count]");
   function actualizarContador() {
@@ -51,7 +44,6 @@
     return !error;
   }
 
-  // Valida al salir de cada campo, y mientras escribe si ya tenía error
   campos.forEach((campo) => {
     campo.addEventListener("blur", () => validar(campo));
     campo.addEventListener("input", () => {
@@ -73,7 +65,6 @@
       return;
     }
 
-    // Envío real con FormSubmit (formsubmit.co): reenvía el mensaje a data-email
     const datos = new FormData(formulario);
     const destino = formulario.dataset.email;
 
@@ -109,7 +100,6 @@
     }
   });
 
-  /** Traduce los fallos más comunes de FormSubmit a un mensaje claro. */
   function explicarError(error, destino) {
     const detalle = String(error && error.message).toLowerCase();
     if (detalle.includes("activat")) {
@@ -121,7 +111,6 @@
     return `No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a ${destino}.`;
   }
 
-  // Copiar el correo de "Otras formas de contacto" sin abrir otra pestaña
   const copiar = document.querySelector("[data-copy-email]");
   const avisoCopia = document.querySelector("[data-copy-status]");
   if (copiar) {

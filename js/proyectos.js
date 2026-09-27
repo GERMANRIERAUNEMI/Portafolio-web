@@ -1,12 +1,6 @@
-/**
- * proyectos.js
- * Funcionalidad 5: filtro de proyectos por tecnología.
- * Funcionalidad 6: ventana (modal) con los detalles de cada proyecto.
- */
 (function () {
   "use strict";
 
-  /* ---------------- Filtro por tecnología ---------------- */
   const botones = document.querySelectorAll("[data-filter]");
   const tarjetas = document.querySelectorAll(".card[data-tech]");
   const aviso = document.querySelector("[data-filter-status]");
@@ -31,7 +25,6 @@
 
   botones.forEach((boton) => boton.addEventListener("click", () => filtrar(boton.dataset.filter)));
 
-  /* ---------------- Modal de detalles ---------------- */
   const modal = document.querySelector("[data-project-modal]");
   if (!modal) return;
 
@@ -79,11 +72,9 @@
 
   modal.querySelector("[data-close-modal]").addEventListener("click", () => modal.close());
 
-  // Clic fuera del contenido (sobre el fondo oscuro) cierra la ventana
   modal.addEventListener("click", (evento) => {
     if (evento.target === modal) modal.close();
   });
 
-  // Al cerrar (botón, Escape o fondo), el foco vuelve al botón que la abrió
   modal.addEventListener("close", () => botonQueAbrio?.focus());
 })();
