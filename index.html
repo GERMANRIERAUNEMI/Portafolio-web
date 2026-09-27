@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- EDITAR: tu nombre y una descripción corta -->
+  <title>Germán Riera · Desarrollador web</title>
+  <meta name="description" content="Portafolio de Germán Riera, desarrollador web. Proyectos con HTML, CSS, JavaScript, Python y Django.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos: primero las variables, luego la base, componentes y secciones -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- Aplica el tema guardado antes de dibujar la página (evita un parpadeo) -->
+  <script src="js/tema-inicial.js"></script>
+  <script src="js/tema.js" defer></script>
+  <script src="js/navegacion.js" defer></script>
+  <script src="js/hero.js" defer></script>
+  <script src="js/proyectos.js" defer></script>
+  <script src="js/formulario.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ================= Encabezado y navegación ================= -->
+  <header class="navbar">
+    <nav class="navbar__inner container" aria-label="Principal">
+      <a class="navbar__brand" href="#inicio">
+        <span class="navbar__brand-mark" aria-hidden="true">GR</span>
+        Germán Riera
+      </a>
+
+      <ul class="navbar__links" id="menu-principal">
+        <li><a class="navbar__link" href="#inicio">Inicio</a></li>
+        <li><a class="navbar__link" href="#sobre-mi">Sobre mí</a></li>
+        <li><a class="navbar__link" href="#habilidades">Habilidades</a></li>
+        <li><a class="navbar__link" href="#proyectos">Proyectos</a></li>
+        <li><a class="navbar__link" href="#contacto">Contacto</a></li>
+        <li><a class="navbar__link" href="design-system.html">Design System</a></li>
+      </ul>
+
+      <button class="btn-icon theme-toggle" type="button" aria-label="Cambiar a tema oscuro" data-theme-toggle>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+
+      <button class="btn-icon navbar__toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal" data-menu-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ================= Inicio ================= -->
+    <section class="hero" id="inicio" aria-labelledby="titulo-inicio">
+      <div class="hero__grid container">
+        <div>
+          <p class="hero__greeting">Hola, soy</p>
+          <!-- EDITAR: tu nombre completo -->
+          <h1 class="hero__name" id="titulo-inicio" data-reveal-name>Germán Riera</h1>
+          <p class="hero__role">Desarrollador web · Python y Django</p>
+          <p class="hero__intro">
+            Construyo aplicaciones web que resuelven problemas concretos: un juego multijugador
+            en tiempo real y un sistema para registrar consultas médicas son mis proyectos más recientes.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#proyectos">Ver mis proyectos</a>
+            <a class="btn btn--secondary" href="#contacto">Escríbeme</a>
+          </div>
+        </div>
+
+        <figure class="avatar">
+          <img class="avatar__image" src="assets/img/foto-perfil.jpg" alt="Germán Riera, de traje negro y corbata dorada, sonriendo" width="400" height="400">
+          <figcaption class="avatar__caption">Desarrollador web</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= Sobre mí ================= -->
+    <section class="section section--alt" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="titulo-sobre-mi">Sobre mí</h2>
+          <p>Me interesa el desarrollo web de principio a fin: desde la base de datos hasta la pantalla que usa la gente.</p>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__text">
+            <!-- EDITAR: cuenta tu historia con tus propias palabras -->
+            <p>
+              Soy desarrollador web. Empecé con HTML y CSS, y hoy trabajo con JavaScript en el navegador
+              y con Python y Django en el servidor.
+            </p>
+            <p>
+              Me gusta aprender construyendo. Cada proyecto me obliga a resolver algo nuevo: sincronizar
+              jugadores en tiempo real, diseñar una base de datos para historias clínicas o usar
+              inteligencia artificial para analizar imágenes médicas.
+            </p>
+            <p>
+              Busco prácticas o proyectos donde pueda aportar en desarrollo web y seguir creciendo
+              en backend y bases de datos.
+            </p>
+          </div>
+
+          <aside class="about__aside" aria-label="Qué hago e intereses">
+            <h3>Qué hago</h3>
+            <ol class="timeline">
+              <li class="timeline__item">
+                <span class="timeline__period">Frontend</span>
+                <p class="timeline__title">Interfaces claras y responsive</p>
+                <p class="text-muted text-small">Páginas que se ven y funcionan bien en computadora y teléfono.</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__period">Backend</span>
+                <p class="timeline__title">Aplicaciones web con Django</p>
+                <p class="text-muted text-small">Usuarios, formularios, bases de datos y paneles de administración.</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__period">Aprendizaje continuo</span>
+                <p class="timeline__title">Documentación oficial y proyectos propios</p>
+                <p class="text-muted text-small">MDN Web Docs, documentación de Django y Firebase.</p>
+              </li>
+            </ol>
+
+            <h3>Intereses</h3>
+            <ul class="badge-list">
+              <li class="badge">Desarrollo web</li>
+              <li class="badge">Bases de datos</li>
+              <li class="badge">Software para salud</li>
+              <li class="badge">Aplicaciones en tiempo real</li>
+              <li class="badge">Accesibilidad</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Habilidades ================= -->
+    <section class="section" id="habilidades" aria-labelledby="titulo-habilidades">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="titulo-habilidades">Habilidades</h2>
+          <p>Cada nivel está respaldado por un proyecto que puedes revisar más abajo.</p>
+        </header>
+
+        <!-- EDITAR: ajusta los niveles a lo que puedas explicar en tu presentación.
+             data-level: 1 = Básico, 2 = Intermedio, 3 = Avanzado -->
+        <div class="skills__grid">
+          <article class="skills__group">
+            <h3>Frontend</h3>
+            <ul class="skills__list">
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true">HT</span>
+                <div class="skill__header">
+                  <h4 class="skill__name">HTML5</h4>
+                  <span class="level" data-level="2"><span class="level__bar" aria-hidden="true"><span></span><span></span><span></span></span>Intermedio</span>
+                </div>
+                <p class="skill__description">Estructura semántica, formularios accesibles y plantillas de Django.</p>
+              </li>
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true">CS</span>
+                <div class="skill__header">
+                  <h4 class="skill__name">CSS3</h4>
+                  <span class="level" data-level="2"><span class="level__bar" aria-hidden="true"><span></span><span></span><span></span></span>Intermedio</span>
+                </div>
+                <p class="skill__description">Variables, Grid, Flexbox, diseño responsive y tema oscuro.</p>
+              </li>
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true">JS</span>
+                <div class="skill__header">
+                  <h4 class="skill__name">JavaScript</h4>
+                  <span class="level" data-level="1"><span class="level__bar" aria-hidden="true"><span></span><span></span><span></span></span>Básico</span>
+                </div>
+                <p class="skill__description">Manejo del DOM, eventos, módulos y cálculo en vivo del IMC.</p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skills__group">
+            <h3>Backend</h3>
+            <ul class="skills__list">
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true">Py</span>
+                <div class="skill__header">
+                  <h4 class="skill__name">Python</h4>
+                  <span class="level" data-level="1"><span class="level__bar" aria-hidden="true"><span></span><span></span><span></span></span>Básico</span>
+                </div>
+                <p class="skill__description">Lógica de negocio, validaciones y pruebas automáticas.</p>
+              </li>
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true">Dj</span>
+                <div class="skill__header">
+                  <h4 class="skill__name">Django</h4>
+                  <span class="level" data-level="1"><span class="level__bar" aria-hidden="true"><span></span><span></span><span></span></span>Básico</span>
+                </div>
+                <p class="skill__description">Modelos, formularios, vistas, autenticación y panel de administración.</p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skills__group">
+            <h3>Bases de datos</h3>
+            <ul class="skills__list">
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true">Pg</span>
+                <div class="skill__header">
+                  <h4 class="skill__name">PostgreSQL</h4>
+                  <span class="level" data-level="1"><span class="level__bar" aria-hidden="true"><span></span><span></span><span></span></span>Básico</span>
+                </div>
+                <p class="skill__description">Relaciones entre tablas, restricciones e índices desde el ORM de Django.</p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skills__group">
+            <h3>Herramientas</h3>
+            <ul class="skills__list">
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true">Gt</span>
+                <div class="skill__header">
+                  <h4 class="skill__name">Git y GitHub</h4>
+                  <span class="level" data-level="1"><span class="level__bar" aria-hidden="true"><span></span><span></span><span></span></span>Básico</span>
+                </div>
+                <p class="skill__description">Commits, repositorios remotos y publicación con GitHub Pages.</p>
+              </li>
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true">VS</span>
+                <div class="skill__header">
+                  <h4 class="skill__name">VS Code</h4>
+                  <span class="level" data-level="2"><span class="level__bar" aria-hidden="true"><span></span><span></span><span></span></span>Intermedio</span>
+                </div>
+                <p class="skill__description">Entornos virtuales, terminal integrada y depuración.</p>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="skills__legend">
+          <span><strong>Básico:</strong> lo aplico en proyectos pequeños con apoyo de documentación.</span>
+          <span><strong>Intermedio:</strong> lo uso con soltura y puedo explicar cómo funciona.</span>
+          <span><strong>Avanzado:</strong> lo domino y resuelvo problemas complejos por mi cuenta.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= Proyectos ================= -->
+    <section class="section section--alt" id="proyectos" aria-labelledby="titulo-proyectos">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="titulo-proyectos">Proyectos destacados</h2>
+          <p>Filtra por tecnología y abre cada proyecto para ver más detalles.</p>
+        </header>
+
+        <div class="filters" role="group" aria-label="Filtrar proyectos por tecnología">
+          <button class="chip" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+          <button class="chip" type="button" data-filter="javascript" aria-pressed="false">JavaScript</button>
+          <button class="chip" type="button" data-filter="firebase" aria-pressed="false">Firebase</button>
+          <button class="chip" type="button" data-filter="python" aria-pressed="false">Python</button>
+          <button class="chip" type="button" data-filter="django" aria-pressed="false">Django</button>
+          <button class="chip" type="button" data-filter="postgresql" aria-pressed="false">PostgreSQL</button>
+        </div>
+        <p class="sr-only" aria-live="polite" data-filter-status></p>
+
+        <div class="projects__grid">
+
+          <!-- Proyecto 1 -->
+          <article class="card" data-tech="html css javascript firebase">
+            <figure class="card__media">
+              <img src="assets/img/proyecto-ahorcado.webp" alt="Partida del juego del ahorcado con la palabra CASA a medio descubrir y el teclado en pantalla" width="1200" height="750" loading="lazy">
+            </figure>
+            <div class="card__body">
+              <h3 class="card__title">Juego del Ahorcado multijugador</h3>
+              <p class="card__text">Juego web con modo de 1 jugador y salas en línea donde cada persona juega desde su propio dispositivo.</p>
+              <p class="card__problem"><strong>Problema:</strong> jugar con amigos a distancia sin instalar nada ni crear cuentas.</p>
+              <ul class="badge-list" aria-label="Tecnologías">
+                <li class="badge">HTML</li>
+                <li class="badge">CSS</li>
+                <li class="badge">JavaScript</li>
+                <li class="badge">Firebase</li>
+              </ul>
+              <div class="card__actions">
+                <button class="btn btn--primary btn--small" type="button" data-open-project>Ver detalles</button>
+                <a class="btn btn--secondary btn--small" href="https://github.com/GERMANRIERAUNEMI/Juego-del-Ahorcado" target="_blank" rel="noopener">Repositorio</a>
+              </div>
+            </div>
+            <template class="card__detail">
+              <p>
+                Tiene dos modos. En <strong>1 jugador</strong> se adivinan palabras al azar, con puntos,
+                rachas y un récord guardado en el dispositivo. En <strong>2 jugadores</strong> se crea una
+                sala con un código de 4 letras y todos ven las jugadas al instante.
+              </p>
+              <h4>Qué resuelve</h4>
+              <p>Permite jugar con amigos que están en otro lugar, solo abriendo un enlace, sin descargar aplicaciones ni registrarse.</p>
+              <h4>Lo que aprendí</h4>
+              <ul>
+                <li>Separar el código en capas: reglas del juego, servicios de datos e interfaz.</li>
+                <li>Sincronizar datos en tiempo real con Firestore y proteger la base con reglas de seguridad.</li>
+                <li>Escribir pruebas automáticas para la lógica del juego.</li>
+              </ul>
+            </template>
+          </article>
+
+          <!-- Proyecto 2 -->
+          <article class="card" data-tech="python django postgresql javascript html css">
+            <figure class="card__media">
+              <img src="assets/img/proyecto-clinica.webp" alt="Detalle de una consulta médica con signos vitales, IMC, receta y cita de seguimiento" width="1200" height="750" loading="lazy">
+            </figure>
+            <div class="card__body">
+              <h3 class="card__title">Plataforma de gestión de pacientes</h3>
+              <p class="card__text">Sistema para registrar pacientes, atender consultas médicas, generar recetas y agendar citas de seguimiento.</p>
+              <p class="card__problem"><strong>Problema:</strong> consultorios que llevan historias clínicas en papel y pierden el seguimiento de sus pacientes.</p>
+              <ul class="badge-list" aria-label="Tecnologías">
+                <li class="badge">Python</li>
+                <li class="badge">Django</li>
+                <li class="badge">PostgreSQL</li>
+                <li class="badge">JavaScript</li>
+              </ul>
+              <div class="card__actions">
+                <button class="btn btn--primary btn--small" type="button" data-open-project>Ver detalles</button>
+                <a class="btn btn--secondary btn--small" href="https://github.com/GERMANRIERAUNEMI/plataforma-de-gestion-de-pacientes" target="_blank" rel="noopener">Repositorio</a>
+              </div>
+            </div>
+            <template class="card__detail">
+              <p>
+                El doctor busca al paciente, abre una consulta y registra síntomas, signos vitales,
+                diagnóstico y receta. El IMC se calcula en vivo mientras escribe el peso y la estatura,
+                y al final puede agendar una cita de seguimiento.
+              </p>
+              <h4>Qué resuelve</h4>
+              <p>Centraliza el historial de cada paciente, muestra sus alergias antes de recetar y organiza la agenda de citas.</p>
+              <h4>Lo que aprendí</h4>
+              <ul>
+                <li>Diseñar modelos relacionados en Django: pacientes, consultas, medicamentos y citas.</li>
+                <li>Guardar varios formularios en una sola transacción para no dejar datos a medias.</li>
+                <li>Proteger contraseñas con variables de entorno antes de subir el código a GitHub.</li>
+              </ul>
+              <p class="text-muted text-small">Este proyecto necesita un servidor con Python, por eso no tiene una versión publicada en GitHub Pages.</p>
+            </template>
+          </article>
+
+          <!-- Proyecto 3 -->
+          <article class="card" data-tech="python django tensorflow postgresql javascript html css">
+            <figure class="card__media">
+              <img src="assets/img/proyecto-anemia.jpg" alt="Reporte de un análisis conjuntival con el resultado Anemia Detectada, observaciones clínicas y porcentaje de confianza" width="1200" height="750" loading="lazy">
+            </figure>
+            <div class="card__body">
+              <h3 class="card__title">Sistema de detección de anemia</h3>
+              <p class="card__text">Aplicación web que analiza fotos de la conjuntiva del ojo con un modelo de inteligencia artificial para detectar posibles casos de anemia.</p>
+              <p class="card__problem"><strong>Problema:</strong> detectar señales de anemia de forma rápida y sin pinchazos, como apoyo antes de pedir exámenes de laboratorio.</p>
+              <ul class="badge-list" aria-label="Tecnologías">
+                <li class="badge">Python</li>
+                <li class="badge">Django</li>
+                <li class="badge">TensorFlow</li>
+                <li class="badge">PostgreSQL</li>
+              </ul>
+              <div class="card__actions">
+                <button class="btn btn--primary btn--small" type="button" data-open-project>Ver detalles</button>
+                <a class="btn btn--secondary btn--small" href="https://github.com/GERMANRIERAUNEMI/Sistema-de-Detecci-n-de-Anemia" target="_blank" rel="noopener">Repositorio</a>
+              </div>
+            </div>
+            <template class="card__detail">
+              <p>
+                El médico registra al paciente, sube una foto de la conjuntiva palpebral y el sistema la
+                procesa con un modelo de TensorFlow. El resultado indica si hay sospecha de anemia, con su
+                porcentaje de confianza, observaciones y recomendaciones, y se puede descargar en PDF.
+              </p>
+              <h4>Qué resuelve</h4>
+              <p>Ofrece una primera evaluación no invasiva y guarda el historial de análisis y reportes de cada paciente.</p>
+              <h4>Lo que aprendí</h4>
+              <ul>
+                <li>Cargar un modelo de aprendizaje automático y usarlo desde una vista de Django.</li>
+                <li>Preparar las imágenes antes de analizarlas: convertir a RGB y redimensionar.</li>
+                <li>Separar el proyecto en apps: pacientes y análisis por un lado, autenticación y perfiles por otro.</li>
+                <li>Generar reportes en PDF con ReportLab.</li>
+              </ul>
+              <p class="text-muted text-small">Los resultados son orientativos y no sustituyen la valoración de un profesional de la salud.</p>
+            </template>
+          </article>
+        </div>
+
+        <p class="projects__empty" data-projects-empty hidden>No hay proyectos con esa tecnología todavía.</p>
+      </div>
+    </section>
+
+    <!-- ================= Contacto ================= -->
+    <section class="section" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="titulo-contacto">Contacto</h2>
+          <p>¿Tienes una práctica, un proyecto o una pregunta? Escríbeme.</p>
+        </header>
+
+        <div class="contact__grid">
+          <!-- data-email es el correo que recibirá los mensajes -->
+          <form class="contact__form" novalidate data-contact-form data-email="grierar@unemi.edu.ec">
+            <div class="field">
+              <label class="field__label" for="nombre">Nombre</label>
+              <input class="input" id="nombre" name="nombre" type="text" autocomplete="name" required minlength="3" maxlength="80" aria-describedby="error-nombre">
+              <span class="field__error" id="error-nombre" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="email">Correo electrónico</label>
+              <input class="input" id="email" name="email" type="email" autocomplete="email" required maxlength="120" aria-describedby="error-email">
+              <span class="field__error" id="error-email" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="mensaje">Mensaje</label>
+              <span class="field__hint" id="ayuda-mensaje">Entre 20 y 1000 caracteres. <span data-char-count>0 / 1000</span></span>
+              <textarea class="textarea" id="mensaje" name="mensaje" required minlength="20" maxlength="1000" aria-describedby="ayuda-mensaje error-mensaje"></textarea>
+              <span class="field__error" id="error-mensaje" aria-live="polite"></span>
+            </div>
+
+            <!-- Campo trampa anti-spam: las personas no lo ven, los bots lo llenan -->
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+
+            <button class="btn btn--primary" type="submit">Enviar mensaje</button>
+            <p class="form-status" role="status" data-form-status></p>
+          </form>
+
+          <aside aria-labelledby="titulo-otras-vias">
+            <h3 id="titulo-otras-vias">Otras formas de contacto</h3>
+            <p class="text-muted">También puedes revisar mi código directamente en GitHub.</p>
+            <ul class="contact__links">
+              <li>
+                <!-- Correo profesional -->
+                <a href="mailto:grierar@unemi.edu.ec">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                  grierar@unemi.edu.ec
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/GERMANRIERAUNEMI" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7 3.6 3.6 0 0 1 .1-2.7s.8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+                  github.com/GERMANRIERAUNEMI
+                </a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Pie de página ================= -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <p>© <span data-year>2026</span> Germán Riera. Hecho con HTML, CSS y JavaScript.</p>
+      <p><a href="design-system.html">Design System</a></p>
+    </div>
+  </footer>
+
+  <!-- Ventana con los detalles de cada proyecto (la llena js/proyectos.js) -->
+  <dialog class="modal" aria-labelledby="modal-titulo" data-project-modal>
+    <header class="modal__header">
+      <h3 class="modal__title" id="modal-titulo"></h3>
+      <button class="btn-icon" type="button" aria-label="Cerrar" data-close-modal>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </header>
+    <div class="modal__body" data-modal-body></div>
+  </dialog>
+
+  <button class="btn-icon back-to-top" type="button" aria-label="Volver al inicio" data-back-to-top>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</body>
+</html>

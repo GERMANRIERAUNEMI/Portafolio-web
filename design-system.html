@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design System · Germán Riera</title>
+  <meta name="description" content="Colores, tipografía, espaciados y componentes reutilizables del portafolio de Germán Riera.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/design-system.css">
+
+  <script src="js/tema-inicial.js"></script>
+  <script src="js/tema.js" defer></script>
+  <script src="js/navegacion.js" defer></script>
+  <script src="js/proyectos.js" defer></script>
+  <script src="js/design-system.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="navbar">
+    <nav class="navbar__inner container" aria-label="Principal">
+      <a class="navbar__brand" href="index.html">
+        <span class="navbar__brand-mark" aria-hidden="true">GR</span>
+        Germán Riera
+      </a>
+
+      <ul class="navbar__links" id="menu-principal">
+        <li><a class="navbar__link" href="index.html#inicio">Inicio</a></li>
+        <li><a class="navbar__link" href="index.html#sobre-mi">Sobre mí</a></li>
+        <li><a class="navbar__link" href="index.html#habilidades">Habilidades</a></li>
+        <li><a class="navbar__link" href="index.html#proyectos">Proyectos</a></li>
+        <li><a class="navbar__link" href="index.html#contacto">Contacto</a></li>
+        <li><a class="navbar__link" href="design-system.html" aria-current="page">Design System</a></li>
+      </ul>
+
+      <button class="btn-icon theme-toggle" type="button" aria-label="Cambiar a tema oscuro" data-theme-toggle>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+
+      <button class="btn-icon navbar__toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal" data-menu-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="section ds-intro" aria-labelledby="titulo-ds">
+      <div class="container">
+        <h1 id="titulo-ds">Design System</h1>
+        <p class="hero__intro">
+          Las decisiones visuales y los componentes que usa el portafolio. Todo sale de las
+          variables de <code>css/tokens.css</code>: si cambias una variable, cambia en todo el sitio.
+          Prueba el botón de tema para ver la paleta oscura.
+        </p>
+        <nav class="ds-toc" aria-label="Contenido de esta página">
+          <a href="#colores">Colores</a>
+          <a href="#tipografia">Tipografía</a>
+          <a href="#espaciado">Espaciado</a>
+          <a href="#bordes">Bordes y sombras</a>
+          <a href="#componentes">Componentes</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ================= Colores ================= -->
+    <section class="section section--alt" id="colores" aria-labelledby="titulo-colores">
+      <div class="container">
+        <h2 id="titulo-colores">Colores</h2>
+        <p class="text-muted">El valor de cada color se lee en vivo desde el CSS, así que cambia al pasar al tema oscuro.</p>
+
+        <div class="swatches">
+          <figure class="swatch"><div class="swatch__color" style="--swatch: var(--color-primary)"></div>
+            <figcaption><strong>Primary</strong><code>--color-primary</code><span data-token="--color-primary">#3346d3</span></figcaption></figure>
+          <figure class="swatch"><div class="swatch__color" style="--swatch: var(--color-secondary)"></div>
+            <figcaption><strong>Secondary</strong><code>--color-secondary</code><span data-token="--color-secondary">#f2a900</span></figcaption></figure>
+          <figure class="swatch"><div class="swatch__color" style="--swatch: var(--color-background)"></div>
+            <figcaption><strong>Background</strong><code>--color-background</code><span data-token="--color-background">#f5f6fa</span></figcaption></figure>
+          <figure class="swatch"><div class="swatch__color" style="--swatch: var(--color-surface)"></div>
+            <figcaption><strong>Surface</strong><code>--color-surface</code><span data-token="--color-surface">#ffffff</span></figcaption></figure>
+          <figure class="swatch"><div class="swatch__color" style="--swatch: var(--color-text)"></div>
+            <figcaption><strong>Text</strong><code>--color-text</code><span data-token="--color-text">#1a1d2e</span></figcaption></figure>
+          <figure class="swatch"><div class="swatch__color" style="--swatch: var(--color-text-muted)"></div>
+            <figcaption><strong>Text muted</strong><code>--color-text-muted</code><span data-token="--color-text-muted">#5c6178</span></figcaption></figure>
+          <figure class="swatch"><div class="swatch__color" style="--swatch: var(--color-primary-soft)"></div>
+            <figcaption><strong>Primary soft</strong><code>--color-primary-soft</code><span data-token="--color-primary-soft">#e6e9ff</span></figcaption></figure>
+          <figure class="swatch"><div class="swatch__color" style="--swatch: var(--color-border)"></div>
+            <figcaption><strong>Border</strong><code>--color-border</code><span data-token="--color-border">#d9dce8</span></figcaption></figure>
+          <figure class="swatch"><div class="swatch__color" style="--swatch: var(--color-success)"></div>
+            <figcaption><strong>Success</strong><code>--color-success</code><span data-token="--color-success">#1f7a4d</span></figcaption></figure>
+          <figure class="swatch"><div class="swatch__color" style="--swatch: var(--color-error)"></div>
+            <figcaption><strong>Error</strong><code>--color-error</code><span data-token="--color-error">#c0362c</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Tipografía ================= -->
+    <section class="section" id="tipografia" aria-labelledby="titulo-tipografia">
+      <div class="container">
+        <h2 id="titulo-tipografia">Tipografía</h2>
+        <p class="text-muted">
+          <strong>Bricolage Grotesque</strong> para títulos, por su carácter y sus formas redondeadas.
+          <strong>Source Sans 3</strong> para el texto, porque se lee bien en pantallas pequeñas.
+          La escala crece en una razón de 1.25.
+        </p>
+
+        <div class="type-specimens">
+          <div class="type-row">
+            <span class="type-row__meta"><code>h1</code> <code>--text-3xl</code></span>
+            <p class="type-sample type-sample--h1">Construyo aplicaciones web</p>
+          </div>
+          <div class="type-row">
+            <span class="type-row__meta"><code>h2</code> <code>--text-2xl</code></span>
+            <p class="type-sample type-sample--h2">Proyectos destacados</p>
+          </div>
+          <div class="type-row">
+            <span class="type-row__meta"><code>h3</code> <code>--text-lg</code></span>
+            <p class="type-sample type-sample--h3">Plataforma de gestión de pacientes</p>
+          </div>
+          <div class="type-row">
+            <span class="type-row__meta"><code>p</code> <code>--text-base</code></span>
+            <p>Párrafo: el doctor busca al paciente, abre una consulta y registra síntomas, signos vitales y receta.</p>
+          </div>
+          <div class="type-row">
+            <span class="type-row__meta"><code>.text-muted</code> <code>--text-sm</code></span>
+            <p class="text-muted text-small">Texto secundario para datos de apoyo, fechas y ayudas de formularios.</p>
+          </div>
+          <div class="type-row">
+            <span class="type-row__meta"><code>a</code></span>
+            <p><a href="index.html#proyectos">Enlace a la sección de proyectos</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Espaciado ================= -->
+    <section class="section section--alt" id="espaciado" aria-labelledby="titulo-espaciado">
+      <div class="container">
+        <h2 id="titulo-espaciado">Espaciado</h2>
+        <p class="text-muted">Escala basada en múltiplos de 4 px. Los componentes solo usan estos valores.</p>
+
+        <table class="space-table">
+          <caption class="sr-only">Escala de espaciados</caption>
+          <thead>
+            <tr><th scope="col">Variable</th><th scope="col">Valor</th><th scope="col">Uso principal</th><th scope="col">Muestra</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>--space-2xs</code></td><td>0.25rem · 4px</td><td>Separación entre badges y texto</td><td><span class="space-bar" style="--size: var(--space-2xs)"></span></td></tr>
+            <tr><td><code>--space-xs</code></td><td>0.5rem · 8px</td><td>Espacio dentro de botones y chips</td><td><span class="space-bar" style="--size: var(--space-xs)"></span></td></tr>
+            <tr><td><code>--space-sm</code></td><td>0.75rem · 12px</td><td>Espacio entre elementos de una card</td><td><span class="space-bar" style="--size: var(--space-sm)"></span></td></tr>
+            <tr><td><code>--space-md</code></td><td>1rem · 16px</td><td>Separación entre campos de formulario</td><td><span class="space-bar" style="--size: var(--space-md)"></span></td></tr>
+            <tr><td><code>--space-lg</code></td><td>1.5rem · 24px</td><td>Relleno de cards y márgenes laterales</td><td><span class="space-bar" style="--size: var(--space-lg)"></span></td></tr>
+            <tr><td><code>--space-xl</code></td><td>2rem · 32px</td><td>Separación entre bloques</td><td><span class="space-bar" style="--size: var(--space-xl)"></span></td></tr>
+            <tr><td><code>--space-2xl</code></td><td>3rem · 48px</td><td>Título de sección y su contenido</td><td><span class="space-bar" style="--size: var(--space-2xl)"></span></td></tr>
+            <tr><td><code>--space-3xl</code></td><td>5rem · 80px</td><td>Espacio vertical entre secciones</td><td><span class="space-bar" style="--size: var(--space-3xl)"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= Bordes y sombras ================= -->
+    <section class="section" id="bordes" aria-labelledby="titulo-bordes">
+      <div class="container">
+        <h2 id="titulo-bordes">Bordes, radios y sombras</h2>
+        <p class="text-muted">El radio depende de la jerarquía: más pequeño en controles, mayor en contenedores y completo en etiquetas.</p>
+        <div class="token-demos">
+          <figure class="token-demo"><div class="token-demo__box" style="border-radius: var(--radius-sm)"></div><figcaption><code>--radius-sm</code> 0.5rem · botones e inputs</figcaption></figure>
+          <figure class="token-demo"><div class="token-demo__box" style="border-radius: var(--radius-md)"></div><figcaption><code>--radius-md</code> 1rem · cards y modal</figcaption></figure>
+          <figure class="token-demo"><div class="token-demo__box" style="border-radius: var(--radius-pill)"></div><figcaption><code>--radius-pill</code> · badges y filtros</figcaption></figure>
+          <figure class="token-demo"><div class="token-demo__box" style="box-shadow: var(--shadow-sm)"></div><figcaption><code>--shadow-sm</code> · card en reposo</figcaption></figure>
+          <figure class="token-demo"><div class="token-demo__box" style="box-shadow: var(--shadow-card)"></div><figcaption><code>--shadow-card</code> · menú y botón flotante</figcaption></figure>
+          <figure class="token-demo"><div class="token-demo__box" style="box-shadow: var(--shadow-lift)"></div><figcaption><code>--shadow-lift</code> · card al pasar el mouse y modal</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Componentes ================= -->
+    <section class="section section--alt" id="componentes" aria-labelledby="titulo-componentes">
+      <div class="container">
+        <h2 id="titulo-componentes">Componentes</h2>
+        <p class="text-muted">Son los mismos componentes del portafolio, con las mismas clases CSS.</p>
+
+        <div class="component-grid">
+          <article class="component">
+            <h3>Botones</h3>
+            <p class="component__classes"><code>.btn .btn--primary</code> <code>.btn--secondary</code> <code>.btn--small</code> <code>.btn-icon</code></p>
+            <div class="component__demo row-demo">
+              <button class="btn btn--primary" type="button">Botón primario</button>
+              <button class="btn btn--secondary" type="button">Botón secundario</button>
+              <button class="btn btn--primary btn--small" type="button">Pequeño</button>
+              <button class="btn-icon" type="button" aria-label="Botón de ícono de ejemplo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="component">
+            <h3>Badges y filtros</h3>
+            <p class="component__classes"><code>.badge</code> <code>.badge--highlight</code> <code>.chip</code></p>
+            <div class="component__demo">
+              <ul class="badge-list">
+                <li class="badge">JavaScript</li>
+                <li class="badge">Django</li>
+                <li class="badge badge--highlight">Destacado</li>
+              </ul>
+              <div class="filters ds-filters">
+                <button class="chip" type="button" aria-pressed="true">Activo</button>
+                <button class="chip" type="button" aria-pressed="false">Inactivo</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="component">
+            <h3>Skill</h3>
+            <p class="component__classes"><code>.skill</code> <code>.level[data-level]</code></p>
+            <div class="component__demo">
+              <ul class="skills__list">
+                <li class="skill">
+                  <span class="skill__icon" aria-hidden="true">JS</span>
+                  <div class="skill__header">
+                    <h4 class="skill__name">JavaScript</h4>
+                    <span class="level" data-level="1"><span class="level__bar" aria-hidden="true"><span></span><span></span><span></span></span>Básico</span>
+                  </div>
+                  <p class="skill__description">Nivel en 3 segmentos: básico, intermedio y avanzado.</p>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="component">
+            <h3>Campos de formulario</h3>
+            <p class="component__classes"><code>.field</code> <code>.input</code> <code>.textarea</code> <code>.field--error</code></p>
+            <div class="component__demo">
+              <div class="field">
+                <label class="field__label" for="demo-input">Input</label>
+                <input class="input" id="demo-input" type="text" placeholder="Tu nombre">
+              </div>
+              <div class="field field--error">
+                <label class="field__label" for="demo-error">Input con error</label>
+                <input class="input" id="demo-error" type="email" value="correo-invalido" aria-invalid="true" aria-describedby="demo-error-msg">
+                <span class="field__error" id="demo-error-msg">Escribe un correo válido, por ejemplo nombre@dominio.com.</span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="demo-textarea">Textarea</label>
+                <textarea class="textarea" id="demo-textarea" placeholder="Tu mensaje"></textarea>
+              </div>
+            </div>
+          </article>
+
+          <article class="component component--wide">
+            <h3>Card de proyecto y modal</h3>
+            <p class="component__classes"><code>.card</code> <code>.card__media</code> <code>.card__body</code> <code>.card__problem</code> <code>.modal</code></p>
+            <div class="component__demo ds-card-demo">
+              <article class="card" data-tech="html css javascript">
+                <figure class="card__media">
+                  <img src="assets/img/proyecto-ahorcado.webp" alt="Partida del juego del ahorcado" width="1200" height="750" loading="lazy">
+                </figure>
+                <div class="card__body">
+                  <h4 class="card__title">Juego del Ahorcado multijugador</h4>
+                  <p class="card__text">Así se ve cada proyecto en el portafolio.</p>
+                  <p class="card__problem"><strong>Problema:</strong> jugar con amigos a distancia sin instalar nada.</p>
+                  <ul class="badge-list" aria-label="Tecnologías">
+                    <li class="badge">JavaScript</li>
+                    <li class="badge">Firebase</li>
+                  </ul>
+                  <div class="card__actions">
+                    <button class="btn btn--primary btn--small" type="button" data-open-project>Abrir modal</button>
+                  </div>
+                </div>
+                <template class="card__detail">
+                  <p>Este es el componente <code>.modal</code>. Se cierra con el botón, con la tecla Escape o haciendo clic fuera.</p>
+                </template>
+              </article>
+            </div>
+          </article>
+
+          <article class="component component--wide">
+            <h3>Navbar</h3>
+            <p class="component__classes"><code>.navbar</code> <code>.navbar__link[aria-current]</code> <code>.navbar__toggle</code></p>
+            <p class="text-muted text-small">Es la barra fija de arriba. En pantallas de menos de 52rem los enlaces se ocultan y aparece el botón de menú. El enlace de la sección actual se resalta.</p>
+            <div class="component__demo ds-navbar-demo" aria-hidden="true">
+              <div class="navbar__inner">
+                <span class="navbar__brand"><span class="navbar__brand-mark">GR</span> Germán Riera</span>
+                <span class="navbar__link" aria-current="true">Inicio</span>
+                <span class="navbar__link">Proyectos</span>
+                <span class="navbar__link">Contacto</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner container">
+      <p>© <span data-year>2026</span> Germán Riera. Hecho con HTML, CSS y JavaScript.</p>
+      <p><a href="index.html">Volver al portafolio</a></p>
+    </div>
+  </footer>
+
+  <dialog class="modal" aria-labelledby="modal-titulo" data-project-modal>
+    <header class="modal__header">
+      <h3 class="modal__title" id="modal-titulo"></h3>
+      <button class="btn-icon" type="button" aria-label="Cerrar" data-close-modal>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </header>
+    <div class="modal__body" data-modal-body></div>
+  </dialog>
+
+  <button class="btn-icon back-to-top" type="button" aria-label="Volver al inicio" data-back-to-top>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Avatar con las iniciales GR">
+  <!-- Avatar temporal: reemplázalo por tu foto (assets/img/foto.jpg) -->
+  <rect width="400" height="400" fill="#3346d3"/>
+  <g fill="none" stroke="#5a6be0" stroke-width="2">
+    <path d="M0 80H400M0 160H400M0 240H400M0 320H400M80 0V400M160 0V400M240 0V400M320 0V400"/>
+  </g>
+  <rect x="96" y="262" width="92" height="10" rx="5" fill="#f2a900"/>
+  <rect x="212" y="262" width="92" height="10" rx="5" fill="#f2a900"/>
+  <text x="142" y="244" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="120" font-weight="700" fill="#ffffff">G</text>
+  <text x="258" y="244" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="120" font-weight="700" fill="#ffffff">R</text>
+</svg>

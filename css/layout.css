@@ -1,0 +1,311 @@
+/* ==========================================================================
+   layout.css — Distribución de cada sección de la página
+   ========================================================================== */
+
+/* ---------- Secciones ---------- */
+.section {
+  padding-block: var(--space-3xl);
+}
+
+.section--alt {
+  background: var(--color-surface);
+  border-block: var(--border);
+}
+
+.section__header {
+  margin-bottom: var(--space-2xl);
+}
+
+.section__header p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+/* ---------- Hero / Inicio ---------- */
+.hero {
+  padding-block: var(--space-3xl) var(--space-2xl);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.hero__greeting {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+/* El nombre aparece letra por letra sobre sus guiones, como en el ahorcado */
+.hero__name {
+  font-size: var(--text-hero);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-lg);
+}
+
+.name-word {
+  display: inline-flex;
+  gap: 0.06em;
+  margin-right: 0.3em;
+  white-space: nowrap;
+}
+
+.name-slot {
+  display: inline-block;
+  min-width: 0.55em;
+  padding-bottom: 0.04em;
+  text-align: center;
+  border-bottom: 0.07em solid var(--color-secondary);
+}
+
+.name-slot__letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-0.3em);
+  transition: opacity 280ms var(--ease-out), transform 280ms var(--ease-out);
+}
+
+.name-slot.is-revealed .name-slot__letter {
+  opacity: 1;
+  transform: none;
+}
+
+.hero__role {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-sm);
+}
+
+.hero__intro {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+/* ---------- Sobre mí ---------- */
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.about__text p {
+  font-size: var(--text-lg);
+}
+
+.about__aside {
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+  border: var(--border);
+}
+
+.about__aside h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.about__aside h3:not(:first-child) {
+  margin-top: var(--space-xl);
+}
+
+/* Línea de tiempo de formación (sí es una secuencia) */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline__item {
+  position: relative;
+  padding: 0 0 var(--space-md) var(--space-lg);
+  border-left: var(--border-width-strong) solid var(--color-border);
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-xs) / 2 - 1px);
+  top: 0.35em;
+  width: var(--space-xs);
+  height: var(--space-xs);
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-background);
+}
+
+.timeline__period {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.timeline__title {
+  margin: 0;
+  font-weight: var(--weight-bold);
+}
+
+/* ---------- Habilidades ---------- */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+  gap: var(--space-lg);
+}
+
+.skills__group {
+  padding: var(--space-lg);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+}
+
+.skills__group h3 {
+  margin-bottom: var(--space-xs);
+}
+
+.skills__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skills__legend {
+  max-width: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ---------- Proyectos ---------- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-lg);
+}
+
+.projects__empty {
+  padding: var(--space-xl);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Contacto ---------- */
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.contact__form {
+  padding: var(--space-xl);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+}
+
+.contact__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-md);
+}
+
+.contact__links a {
+  overflow-wrap: anywhere;   /* los enlaces largos no se salen en teléfonos */
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.contact__links svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  flex-shrink: 0;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  padding-block: var(--space-xl);
+  border-top: var(--border);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+/* Tablets */
+@media (max-width: 60rem) {
+  .about__grid,
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Teléfonos */
+@media (max-width: 40rem) {
+  .section {
+    padding-block: var(--space-2xl);
+  }
+
+  .hero {
+    padding-top: var(--space-xl);
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  /* En el teléfono la foto va primero */
+  .hero__grid .avatar {
+    order: -1;
+    justify-self: start;
+  }
+
+  .hero__actions .btn {
+    flex: 1 1 auto;
+  }
+
+  .contact__form {
+    padding: var(--space-lg);
+  }
+
+  .back-to-top {
+    right: var(--space-md);
+    bottom: var(--space-md);
+  }
+}
